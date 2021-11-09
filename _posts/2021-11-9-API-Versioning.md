@@ -3,8 +3,6 @@ layout: post
 title: API Versioning
 ---
 
-## Should I have to change an API code?
-
 Software is made to be able to adapt to any circumstance, even if one can think it has reached a good degree of stability. So the question wouldn't be WHETHER as much as HOW.  The challenge becomes how best to manage these changes.
 
 Evolving an API is not an easy path. An API stands for a "contract", that is something that both the API provider and the API consumer agree upon. The stability one would expect from these contracts may seem to contradict the ability to change, inherent in all kinds of software. So the strong duty of care to their consumers developers building and designing an API (providers) must have.
@@ -43,14 +41,3 @@ Yes, there is a better way of acting, in terms of readability and maintainabilit
 
 By just by considering the front-end as another API consumer, and not giving them privileges, this would help us to come back on to the right track. We would manage changes in our app by supporting versioning on the API provider, of course.
 
----
-
-- Ways of versioning: URI Path:
-    - A better solution is to create a new microservice for v2 which is deployed separately from v1. This way engineers developing v2 do not have to worry about the needs of v1 clients. Any code that is still shared between v2 and v1 can be pulled out into a shared library.
-    - Of course, this is only possible if your team has the discipline to keep microservices “micro”. Large sprawling monoliths will struggle with this approach. This solution is best when v2 is significantly different than v1.
-
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
-
-![_config.yml]({{ site.baseurl }}/images/config.png)
-
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
