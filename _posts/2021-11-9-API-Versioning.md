@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Versioning
+title: API Versioning - Should I have to change an API code?
 ---
 
 Software is made to be able to adapt to any circumstance, even if one can think it has reached a good degree of stability. So the question wouldn't be WHETHER as much as HOW.  The challenge becomes how best to manage these changes.
