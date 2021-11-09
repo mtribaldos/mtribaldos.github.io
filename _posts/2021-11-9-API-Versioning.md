@@ -26,11 +26,13 @@ Worse than that is the fact that the API provider **starts to depend on its API 
 As the front-end releases new features,  its counterpart, the API provider has to evolve to support new services. Some of these changes can be made "backward compatible", some not. In the former case, there are no problems: new code gets included in the API provider, and front-ends opt in or out depending on their version, without further inconvenience. In the latter case, there is always a shortcut at hand: as front-end component includes a version tag with every release, one could cope with the differences in behaviour from past and present features spreading the code with hundreds of "if-else" statements, as a kind of misuse of *feature flags,* and "to-do" comments for remembering the fact we are in debt. The code is harder to read each time, becoming increasingly unmaintainable. 
 
 ```python
+{% highlight python %}
 # TODO backward compatibility front 1.2.0. To be removed
 if HeadersHelper(request).is_app_version_lower_than('1.2.1'):
     for i, ordering in enumerate(pagination.ordering):
         if ordering.get('field', '').lower() == 'modification_date':
             pagination.ordering[i]['order'] = '-'
+{% endhighlight %}
 ```
 
 Because users have the ultimate control of when to upgrade their apps (of course I'm talking about the front-end), this chains of "if-else" should be kept in code as long as the the mass of people who employ that version is not representative. This kind of misuse of feature flags does not make it easy to track the number of users that are using distinct app versions. There should be a way to better measure what would be the most suitable moment to end the support for the old behaviours.
