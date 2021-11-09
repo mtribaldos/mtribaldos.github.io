@@ -2,3 +2,7 @@
 name: M A Tribaldos Blog
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
